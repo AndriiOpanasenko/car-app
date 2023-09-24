@@ -1,0 +1,61 @@
+@import "../../utils/media-mixins.scss";
+
+.article_block {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    > div {
+        flex: 1 1 auto;
+    }
+
+    button {
+        padding: 0.25rem 0.5rem;
+        max-width: 100px;
+        margin: 0 0 1rem 1rem;
+
+        border: 1px solid #ccc;
+        background-color: transparent;
+        color: #ccc;
+        border-radius: 0.5rem;
+        transition: 0.1s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    @include onMobile {
+        width: 100%;
+    }
+    @include onTablet {
+        width: calc(100% / 2 - 0.5rem);
+    }
+    @include onDesktop {
+        width: calc(100% / 3 - 0.5rem);
+    }
+}
+.article_info {
+    padding: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.image_item {
+    aspect-ratio: 16/9;
+    max-width: 100%;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        min-width: 200px;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
